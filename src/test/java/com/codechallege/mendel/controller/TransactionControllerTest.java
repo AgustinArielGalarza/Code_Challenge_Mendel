@@ -13,7 +13,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.hamcrest.Matchers.is;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 
 @WebMvcTest
@@ -43,7 +42,7 @@ public class TransactionControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/transaction/getTotalAmountByParentId")
                         .param("parentId", parentId))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$", is(203)));
+                .andExpect(MockMvcResultMatchers.jsonPath("$", is(203.0)));
     }
 
 
@@ -52,7 +51,7 @@ public class TransactionControllerTest {
         Transaction transaction = Transaction.builder()
                 .id("1")
                 .type("payment")
-                .amount("100.50")
+                .amount(100.50)
                 .parent_id("1")
                 .build();
 

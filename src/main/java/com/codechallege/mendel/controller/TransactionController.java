@@ -34,6 +34,17 @@ public class TransactionController {
         transactionList.add(transaction5);
         return ResponseEntity.ok(transactionList);
     }
-    
+
+    @GetMapping("/getTotalAmountByParentId")
+    ResponseEntity<Double> getTotalAmountByParentId(@RequestParam String parentId){
+        //TODO: generar el servicio
+        List<Transaction> transactionList = new ArrayList<>();
+        Transaction transaction1 = new Transaction("1", "payment", 100.5, "2");
+        Transaction transaction3 = new Transaction("3", "payment", 102.5, "2");
+        transactionList.add(transaction1);
+        transactionList.add(transaction3);
+        Double totalAmount = transactionList.get(0).getAmount() + transactionList.get(1).getAmount();
+        return ResponseEntity.ok(totalAmount);
+    }
 
 }
