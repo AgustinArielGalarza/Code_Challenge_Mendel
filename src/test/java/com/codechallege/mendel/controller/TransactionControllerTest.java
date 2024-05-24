@@ -36,6 +36,18 @@ public class TransactionControllerTest {
     }
 
     @Test
+    void getTotalAmountByParentId() throws Exception{
+
+        String parentId = "2";
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/transaction/getTotalAmountByParentId")
+                        .param("parentId", parentId))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$", is(203)));
+    }
+
+
+    @Test
     void addTransaction() throws Exception{
         Transaction transaction = Transaction.builder()
                 .id("1")

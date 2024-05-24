@@ -22,11 +22,11 @@ public class TransactionController {
     ResponseEntity<List<Transaction>> getTransactionByType(@RequestParam String type){
         //TODO: generar el servicio
         List<Transaction> transactionList = new ArrayList<>();
-        Transaction transaction1 = new Transaction("1", "payment", "100.5", "2");
-        Transaction transaction2 = new Transaction("2", "payment", "101.5", "1");
-        Transaction transaction3 = new Transaction("3", "payment", "102.5", "2");
-        Transaction transaction4 = new Transaction("4", "payment", "103.5", "1");
-        Transaction transaction5 = new Transaction("5", "payment", "104.5", "1");
+        Transaction transaction1 = new Transaction("1", "payment", 100.5, "2");
+        Transaction transaction2 = new Transaction("2", "payment", 101.5, "1");
+        Transaction transaction3 = new Transaction("3", "payment", 102.5, "2");
+        Transaction transaction4 = new Transaction("4", "payment", 103.5, "1");
+        Transaction transaction5 = new Transaction("5", "payment", 104.5, "1");
         transactionList.add(transaction1);
         transactionList.add(transaction2);
         transactionList.add(transaction3);
@@ -34,5 +34,6 @@ public class TransactionController {
         transactionList.add(transaction5);
         return ResponseEntity.ok(transactionList);
     }
+    
 
 }

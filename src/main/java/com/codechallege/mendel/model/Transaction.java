@@ -12,6 +12,6 @@ import lombok.NoArgsConstructor;
 public class Transaction {
     private String id;
     private String type;
-    private String amount;
+    private Double amount;
     private String parent_id;
 }
