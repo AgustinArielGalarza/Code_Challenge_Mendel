@@ -14,4 +14,5 @@ public class Transaction {
     private String type;
     private Double amount;
     private String parent_id;
+
 }
